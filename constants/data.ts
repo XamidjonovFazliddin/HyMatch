@@ -6,7 +6,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Tokyo",
       distance: 2.5,
-      image: "",
+      image: "images\在庫管理.png",
       tags: ["軽作業", "作業服が支給されます"],
     },
     {
@@ -16,7 +16,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Osaka",
       distance: 1.8,
-      image: "",
+      image: "images\レストランのシェフ.jpg",
       tags: ["マカロン", "料理を作る"],
     },
     {
@@ -26,7 +26,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Fukuoka",
       distance: 0.5,
-      image: "",
+      image: "images\コンビニスタッフ.jfif",
       tags: ["深夜勤務可", "交通費支給"],
     },
     {
@@ -36,7 +36,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Nagoya",
       distance: 3.2,
-      image: "",
+      image: "images\工場作業員.jpg",
       tags: ["体力仕事", "寮完備"],
     },
     {
@@ -46,7 +46,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Kyoto",
       distance: 1.2,
-      image: "",
+      image: "images\ホテル.jpg",
       tags: ["朝勤務", "ユニフォーム貸与"],
     },
     {
@@ -56,7 +56,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Sapporo",
       distance: 4.0,
-      image: "",
+      image: "images\デリバリードライバー.png",
       tags: ["車両貸与", "歩合給あり"],
     },
     {
@@ -66,7 +66,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Kobe",
       distance: 2.1,
-      image: "",
+      image: "images\介護ヘルパー.jpg",
       tags: ["資格取得支援", "研修あり"],
     },
     {
@@ -76,7 +76,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Hiroshima",
       distance: 5.5,
-      image: "",
+      image: "images\建設現場作業.jpg",
       tags: ["高収入", "男性限定"],
     },
     {
@@ -86,7 +86,7 @@ export const jobsData = [
       japaneseLevel: 4,
       location: "Sendai",
       distance: 0.8,
-      image: "",
+      image: "images\データ入力.jpeg",
       tags: ["PC作業", "在宅可"],
     },
     {
@@ -96,7 +96,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Yokohama",
       distance: 2.3,
-      image: "",
+      image: "images\倉庫ピッキング.jpg",
       tags: ["フォークリフト作業", "賞与あり"],
     },
     {
@@ -106,7 +106,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Okinawa",
       distance: 1.1,
-      image: "",
+      image: "images\カフェスタッフ.jpg",
       tags: ["接客業務", "英語活用"],
     },
     {
@@ -116,7 +116,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Nagasaki",
       distance: 3.7,
-      image: "",
+      image: "images\自動車整備補助.jfif",
       tags: ["技術習得", "車通勤可"],
     },
     {
@@ -126,7 +126,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Chiba",
       distance: 2.9,
-      image: "",
+      image: "images\食品加工.jpg",
       tags: ["冷蔵庫作業", "まかないあり"],
     },
     {
@@ -136,7 +136,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Osaka",
       distance: 1.5,
-      image: "",
+      image: "images\イベントスタッフ.png",
       tags: ["短期可", "日払い可"],
     },
     {
@@ -146,7 +146,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Tokyo",
       distance: 0.7,
-      image: "",
+      image: "images\保育補助.jfif",
       tags: ["子供好き", "保育士資格不要"],
     },
     {
@@ -156,7 +156,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Kyoto",
       distance: 2.4,
-      image: "",
+      image: "images\ビル清掃.jpg",
       tags: ["早朝勤務", "未経験OK"],
     },
     {
@@ -166,7 +166,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Hokkaido",
       distance: 6.0,
-      image: "",
+      image: "images\農業作業.jpg",
       tags: ["自然環境", "季節労働"],
     },
     {
@@ -176,7 +176,7 @@ export const jobsData = [
       japaneseLevel: 2,
       location: "Toyota",
       distance: 3.1,
-      image: "",
+      image: "images\工場品質検査.jpg",
       tags: ["細かい作業", "女性活躍中"],
     },
     {
@@ -186,7 +186,7 @@ export const jobsData = [
       japaneseLevel: 1,
       location: "Tokyo",
       distance: 4.2,
-      image: "",
+      image: "images\宅配便仕分け.jpg",
       tags: ["夜間勤務", "体力仕事"],
     },
     {
@@ -196,7 +196,7 @@ export const jobsData = [
       japaneseLevel: 3,
       location: "Osaka",
       distance: 1.3,
-      image: "",
+      image: "images\ホールスタッフ.jpg",
       tags: ["飲食店", "接客メイン"],
     }
   ];
