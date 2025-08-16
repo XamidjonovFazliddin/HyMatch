@@ -1,6 +1,8 @@
+import { useJobContext } from "../../context/JobContext";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
 export default function JobsScreen() {
+  const { likedJobs } = useJobContext();
 
   return (
     <View style={styles.container}>

@@ -5,22 +5,16 @@ interface Job {
   title: string;
   salary: string;
   japaneseLevel: number;
-  location: string;
-  distance: number;
-  image: string;
-  tags: string[];
 }
 
 interface JobContextType {
   likedJobs: Job[];
   addLikedJob: (job: Job) => void;
-  removeLikedJob: (jobId: number) => void;
 }
 
 export const JobContext = createContext<JobContextType>({
   likedJobs: [],
   addLikedJob: () => {},
-  removeLikedJob: () => {},
 });
 
 export const JobProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -32,12 +26,8 @@ export const JobProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     }
   };
 
-  const removeLikedJob = (jobId: number) => {
-    setLikedJobs(likedJobs.filter((job) => job.id !== jobId));
-  };
-
   return (
-    <JobContext.Provider value={{ likedJobs, addLikedJob, removeLikedJob }}>
+    <JobContext.Provider value={{ likedJobs, addLikedJob }}>
       {children}
     </JobContext.Provider>
   );
