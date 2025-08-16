@@ -1,15 +1,14 @@
 import React, { useState, useContext } from "react";
 import { View, Text, StyleSheet, PanResponder, Animated, TouchableOpacity } from "react-native";
 import JobCard from "../../components/JobCard";
-import { JobContext } from "../../context/JobContext";
 import FilterModal from "../../components/FilterModal";
 import { jobsData } from "../../constants/data";
 
-const SwipeScreen = () => {
-  const { likedJobs, addLikedJob } = useContext(JobContext);
+export default function SwipeScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
   const [filteredJobs, setFilteredJobs] = useState(jobsData);
+  const [likedJobs, setLikedJobs] = useState<any[]>([]);
 
   const pan = new Animated.ValueXY();
 
@@ -20,7 +19,7 @@ const SwipeScreen = () => {
     }),
     onPanResponderRelease: (_, gesture) => {
       if (gesture.dx > 120) {
-        addLikedJob(filteredJobs[currentIndex]);
+        setLikedJobs([...likedJobs, filteredJobs[currentIndex]]);
         goToNextJob();
       } else if (gesture.dx < -120) {
         goToNextJob();
@@ -45,7 +44,7 @@ const SwipeScreen = () => {
   if (currentIndex >= filteredJobs.length) {
     return (
       <View style={styles.container}>
-        <Text style={styles.noMoreJobs}>Barcha ishlarni ko'rib chiqdingiz!</Text>
+        <Text style={styles.noMoreJobs}>すべての仕事をチェックしました</Text>
       </View>
     );
   }
@@ -57,7 +56,7 @@ const SwipeScreen = () => {
         onClose={() => setShowFilters(false)}
         onApply={(filters) => {
           const filtered = jobsData.filter((job) => {
-            const minSalaryValue = parseInt(job.salary.split('-')[0].trim(), 10);
+            const minSalaryValue = parseInt(job.salary.split('-')[0]);
     
             return (
                 (!filters.minSalary || minSalaryValue >= filters.minSalary) &&
@@ -95,7 +94,7 @@ const SwipeScreen = () => {
         <TouchableOpacity
           style={[styles.button, styles.likeButton]}
           onPress={() => {
-            addLikedJob(filteredJobs[currentIndex]);
+            setLikedJobs([...likedJobs, filteredJobs[currentIndex]]);
             goToNextJob();
           }}
         >
@@ -152,4 +151,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SwipeScreen;

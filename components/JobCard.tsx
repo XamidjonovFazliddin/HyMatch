@@ -1,27 +1,19 @@
-import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
-import { Job } from "../types/types";
 
-interface JobCardProps {
-  job: Job;
-}
 
-const JobCard: React.FC<JobCardProps> = ({ job }) => {
+
+export default function JobCard({ job }: any) {
   return (
     <View style={styles.card}>
       <Image source={{ uri: job.image }} style={styles.image} />
       <View style={styles.content}>
         <Text style={styles.title}>{job.title}</Text>
-        <Text style={styles.salary}>Maosh: {job.salary} ¥</Text>
-        <Text style={styles.level}>Yapon tili: N{job.japaneseLevel}</Text>
-        <Text style={styles.location}>
-          Manzil: {job.location} ({job.distance} km)
-        </Text>
+        <Text>給与: {job.salary} ¥{job.salary} ¥</Text>
+        <Text>日本語レベル: N{job.japaneseLevel}</Text>
+        <Text>場所: {job.location} ({job.distance} km)</Text>
         <View style={styles.tags}>
-          {job.tags.map((tag, index) => (
-            <Text key={index} style={styles.tag}>
-              {tag}
-            </Text>
+          {job.tags.map((tag: string, index: number) => (
+            <Text key={index} style={styles.tag}>{tag}</Text>
           ))}
         </View>
       </View>
@@ -34,12 +26,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 10,
     overflow: "hidden",
-    margin: 10,
+    width: 300,
     elevation: 3,
   },
   image: {
     width: "100%",
-    height: 200,
+    height: 150,
+    backgroundColor: "#eee",
   },
   content: {
     padding: 15,
@@ -49,23 +42,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 5,
   },
-  salary: {
-    fontSize: 16,
-    color: "green",
-    marginBottom: 5,
-  },
-  level: {
-    fontSize: 14,
-    marginBottom: 5,
-  },
-  location: {
-    fontSize: 14,
-    color: "gray",
-    marginBottom: 10,
-  },
   tags: {
     flexDirection: "row",
     flexWrap: "wrap",
+    marginTop: 10,
   },
   tag: {
     backgroundColor: "#e0e0e0",
@@ -77,4 +57,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default JobCard;

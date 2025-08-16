@@ -1,15 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Link } from "expo-router";
-import BottomNav from "../components/BottomNav";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>HyMatch - Ish Qidiruv Ilovasi</Text>
+      <Text style={styles.title}>HyMatch - 仕事探しアプリ</Text>
       <Link href="/swipe" style={styles.button}>
-        Ish Qidirishni Boshlash
+        仕事を探す
       </Link>
-      <BottomNav />
     </View>
   );
 }
