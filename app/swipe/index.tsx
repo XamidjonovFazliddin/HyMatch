@@ -1,16 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useRef } from "react";
 import { View, Text, StyleSheet, PanResponder, Animated, TouchableOpacity } from "react-native";
+import { useJobContext } from '../../context/JobContext';
 import JobCard from "../../components/JobCard";
 import FilterModal from "../../components/FilterModal";
 import { jobsData } from "../../constants/data";
 
 export default function SwipeScreen() {
+  const { addLikedJob } = useJobContext();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
   const [filteredJobs, setFilteredJobs] = useState(jobsData);
-  const [likedJobs, setLikedJobs] = useState<any[]>([]);
-
-  const pan = new Animated.ValueXY();
+  const pan = useRef(new Animated.ValueXY()).current;
 
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
@@ -19,7 +19,7 @@ export default function SwipeScreen() {
     }),
     onPanResponderRelease: (_, gesture) => {
       if (gesture.dx > 120) {
-        setLikedJobs([...likedJobs, filteredJobs[currentIndex]]);
+        addLikedJob(filteredJobs[currentIndex]);
         goToNextJob();
       } else if (gesture.dx < -120) {
         goToNextJob();
@@ -94,7 +94,7 @@ export default function SwipeScreen() {
         <TouchableOpacity
           style={[styles.button, styles.likeButton]}
           onPress={() => {
-            setLikedJobs([...likedJobs, filteredJobs[currentIndex]]);
+            addLikedJob(filteredJobs[currentIndex]);
             goToNextJob();
           }}
         >
